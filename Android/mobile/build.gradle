@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+project.ext {
+    GOLGI_DIR = "$System.env.HOME" + '/Golgi-Pkg/LATEST'
+    GOLGI_THRIFT_FILE = "../../GolgiEdison.Thrift"
+    GOLGI_DEV_KEY_FILE = "../../Golgi.DevKey"
+    GOLGI_APP_KEY_FILE = "../../Golgi.AppKey"
+    GOLGI_GEN_DIR = "src/main/java/io/golgi/example/golgiedison/gen"
+    GOLGI_GEN_PKG = "io.golgi.example.golgiedison.gen"
+}
+
+apply from: project.GOLGI_DIR + '/Android/golgi.gradle'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "io.golgi.example.golgiedison"
+        minSdkVersion 15
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    wearApp project(':wear')
+    compile 'com.google.android.gms:play-services:+'
+    compile 'com.android.support:appcompat-v7:20.+'
+    compile project.GOLGI_AAR
+}

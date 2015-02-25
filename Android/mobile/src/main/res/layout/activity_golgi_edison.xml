@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".GolgiEdison">
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LED"
+        android:id="@+id/switchLED"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PIR"
+        android:id="@+id/switchPIR"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/switchLED"
+        android:layout_alignRight="@+id/switchLED"
+        android:layout_alignEnd="@+id/switchLED" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Touch"
+        android:layout_marginTop="50dp"
+        android:id="@+id/switchTouch"
+        android:layout_below="@+id/switchPIR"
+        android:layout_alignRight="@+id/switchPIR"
+        android:layout_alignEnd="@+id/switchPIR" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature"
+        android:id="@+id/textViewTemp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/switchTouch"
+        android:layout_alignLeft="@+id/switchLED"
+        android:layout_alignStart="@+id/switchLED" />
+
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarTemp"
+        android:layout_alignLeft="@+id/textViewTemp"
+        android:layout_alignStart="@+id/textViewTemp"
+        android:layout_below="@+id/textViewTemp"
+        android:layout_alignRight="@+id/switchTouch"
+        android:layout_alignEnd="@+id/switchTouch" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="-40C"
+        android:id="@+id/textViewLowTemp"
+        android:layout_below="@+id/progressBarTemp"
+        android:layout_alignLeft="@+id/progressBarTemp"
+        android:layout_alignStart="@+id/progressBarTemp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="120C"
+        android:id="@+id/textViewHighTemp"
+        android:layout_below="@+id/progressBarTemp"
+        android:layout_alignRight="@+id/progressBarTemp"
+        android:layout_alignEnd="@+id/progressBarTemp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Potentiometer"
+        android:id="@+id/textViewPot"
+        android:layout_marginTop="50dp"
+        android:layout_alignTop="@+id/textViewLowTemp"
+        android:layout_alignLeft="@+id/textViewLowTemp"
+        android:layout_alignStart="@+id/textViewLowTemp" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarPot"
+        android:layout_below="@+id/textViewPot"
+        android:layout_alignLeft="@+id/progressBarTemp"
+        android:layout_alignStart="@+id/progressBarTemp"
+        android:layout_alignRight="@+id/progressBarTemp"
+        android:layout_alignEnd="@+id/progressBarTemp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0"
+        android:id="@+id/textViewLowPot"
+        android:layout_below="@+id/progressBarPot"
+        android:layout_alignLeft="@+id/progressBarPot"
+        android:layout_alignStart="@+id/progressBarPot" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="1024"
+        android:id="@+id/textViewHighPot"
+        android:layout_below="@+id/progressBarPot"
+        android:layout_alignRight="@+id/progressBarPot"
+        android:layout_alignEnd="@+id/progressBarPot" />
+
+</RelativeLayout>
